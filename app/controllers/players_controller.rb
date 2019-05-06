@@ -1,5 +1,5 @@
 class PlayersController < ApplicationController
-  before_action :set_player, only: [:show, :update, :destroy]
+  before_action :authorize_request, except: %i[index show]
 
   # GET /players
   def index
