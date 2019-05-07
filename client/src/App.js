@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
-import decode from 'jwt-decode';
-
+import decode from 'jwt-decode'
 import './App.css';
-import { loginUser, registerUser } from './services/api-helper';
-import AuthForm from './components/AuthForm';
-import ShowFood from './components/ShowFood';
+import { loginUser, registerUser } from './helpers/api-helper';
+import AuthForm from './components/AuthForm.js';
+import ShowPost from './components/ShowPost.js';
 
 class App extends Component {
   constructor(props) {
@@ -104,8 +103,8 @@ class App extends Component {
         )} />
         <Link to="/players">This should say players</Link>&nbsp;
         <Link to="/posts">Am I posts?</Link>
-        {/* <Route path="/foods" render={()=>(
-          <ShowFood /> */}
+        <Route path="/foods" render={()=>(
+          <ShowPost />
         )} />
 
 
